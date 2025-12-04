@@ -4,6 +4,7 @@
  */
 package api;
 
+import bo.PerfilesBO;
 import dtos.ProfileDTO;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.UriInfo;
@@ -15,6 +16,7 @@ import jakarta.ws.rs.Path;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 import java.util.logging.Logger;
 
 /**
@@ -26,36 +28,31 @@ import java.util.logging.Logger;
 @RequestScoped
 public class PerfilesResource {
     private static final Logger logger = Logger.getLogger(PerfilesResource.class.getName());
+    private PerfilesBO bo = new PerfilesBO();
 
-    @Context
-    private UriInfo context;
-
-    /**
-     * Creates a new instance of PerfilesResource
-     */
     public PerfilesResource() {
     }
 
-    /**
-     * Retrieves representation of an instance of api.PerfilesResource
-     * @return an instance of dtos.ProfileDTO
-     */
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public ProfileDTO getJson(@QueryParam("edad") int edad) {
-        return new ProfileDTO("Alexis", "Quackity", "Maldonado", "2000-12-28",
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA4eQ4n_UFVHhKcqlRjgFWkdK82sRsTa4amg&s",
-                "quackity@gmail.com", "Masculino", "México", "(54)666-7689",
-                "De las Espadas", 24);
-    }
-
-    /**
-     * PUT method for updating or creating an instance of PerfilesResource
-     * @param content representation for the resource
-     */
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
-    public void addProfile(ProfileDTO content) {
-        logger.info(content.toString());
+    public Response addProfile(ProfileDTO perfil) throws Exception {
+        bo.agregar(perfil);
+        return Response.ok("Perfil agregado").build();
+    }
+    
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getPerfiles(
+            @QueryParam("genero") String genero,
+            @QueryParam("pais") String pais,
+            @QueryParam("edad") Integer edad) throws Exception {
+        
+        ProfileDTO encontrado = bo.buscarAleatorio(genero, pais, edad);
+        if (encontrado == null) {
+            return Response.status(404).entity("No se encontraron perfiles").build();
+        }
+        
+        return Response.ok(encontrado).build();
+        
     }
 }

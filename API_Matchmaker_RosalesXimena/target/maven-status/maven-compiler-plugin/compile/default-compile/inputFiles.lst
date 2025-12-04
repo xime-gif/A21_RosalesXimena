@@ -1,4 +1,7 @@
-C:\Users\Ximena\Documents\NetBeansProjects\API_Matchmaker_RosalesXimena\src\main\java\com\mycompany\api_matchmaker_rosalesximena\resources\JakartaEE10Resource.java
-C:\Users\Ximena\Documents\NetBeansProjects\API_Matchmaker_RosalesXimena\src\main\java\api\PerfilesResource.java
-C:\Users\Ximena\Documents\NetBeansProjects\API_Matchmaker_RosalesXimena\src\main\java\com\mycompany\api_matchmaker_rosalesximena\JakartaRestConfiguration.java
-C:\Users\Ximena\Documents\NetBeansProjects\API_Matchmaker_RosalesXimena\src\main\java\dtos\ProfileDTO.java
+C:\Users\Ximena\Documents\GitHub\A21_RosalesXimena\API_Matchmaker_RosalesXimena\src\main\java\dtos\ProfileDTO.java
+C:\Users\Ximena\Documents\GitHub\A21_RosalesXimena\API_Matchmaker_RosalesXimena\src\main\java\bo\PerfilesBO.java
+C:\Users\Ximena\Documents\GitHub\A21_RosalesXimena\API_Matchmaker_RosalesXimena\src\main\java\com\mycompany\api_matchmaker_rosalesximena\JakartaRestConfiguration.java
+C:\Users\Ximena\Documents\GitHub\A21_RosalesXimena\API_Matchmaker_RosalesXimena\src\main\java\dao\Conexion.java
+C:\Users\Ximena\Documents\GitHub\A21_RosalesXimena\API_Matchmaker_RosalesXimena\src\main\java\com\mycompany\api_matchmaker_rosalesximena\resources\JakartaEE10Resource.java
+C:\Users\Ximena\Documents\GitHub\A21_RosalesXimena\API_Matchmaker_RosalesXimena\src\main\java\dao\PerfilesDAO.java
+C:\Users\Ximena\Documents\GitHub\A21_RosalesXimena\API_Matchmaker_RosalesXimena\src\main\java\api\PerfilesResource.java
