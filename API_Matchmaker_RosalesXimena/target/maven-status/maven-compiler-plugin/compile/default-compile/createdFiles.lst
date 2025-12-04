@@ -1,0 +1,4 @@
+com\mycompany\api_matchmaker_rosalesximena\JakartaRestConfiguration.class
+com\mycompany\api_matchmaker_rosalesximena\resources\JakartaEE10Resource.class
+api\PerfilesResource.class
+dtos\ProfileDTO.class
